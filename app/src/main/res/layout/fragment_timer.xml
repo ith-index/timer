@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".TimerFragment">
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineTopMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineBottomMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineLeftMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineRightMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineContentSplitter"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.75"/>
+    <com.example.timer.views.TimerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textViewTime" tools:text="10:10:10"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTopMargin"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform" app:autoSizeMaxTextSize="500sp" app:autoSizeMinTextSize="5sp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineContentSplitter" android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+    />
+    <android.support.design.widget.FloatingActionButton
+            app:srcCompat="@drawable/ic_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" android:focusable="true"
+            android:id="@+id/floatingActionButtonPlay"
+            android:tint="@android:color/white"
+            app:layout_constraintStart_toEndOf="@+id/floatingActionButtonReset" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonClear" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTime" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottomMargin"/>
+    <android.support.design.widget.FloatingActionButton
+            app:srcCompat="@drawable/ic_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" android:focusable="true" android:id="@+id/floatingActionButtonPause"
+            android:tint="@android:color/white"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin" android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            android:layout_marginLeft="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottomMargin" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTime" android:visibility="gone"/>
+    <android.support.design.widget.FloatingActionButton
+            app:srcCompat="@drawable/ic_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" android:focusable="true"
+            android:id="@+id/floatingActionButtonReset" android:tint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonPlay"
+            app:layout_constraintTop_toTopOf="@+id/floatingActionButtonPlay"
+            app:layout_constraintBottom_toBottomOf="@+id/floatingActionButtonPlay"/>
+    <android.support.design.widget.FloatingActionButton
+            app:srcCompat="@drawable/ic_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" android:focusable="true"
+            android:id="@+id/floatingActionButtonClear" android:tint="@android:color/white"
+            app:layout_constraintStart_toEndOf="@+id/floatingActionButtonPlay" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/floatingActionButtonPlay"
+            app:layout_constraintBottom_toBottomOf="@+id/floatingActionButtonPlay"/>
+</android.support.constraint.ConstraintLayout>
